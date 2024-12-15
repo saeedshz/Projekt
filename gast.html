@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self';">
+    <title>Register</title>
+    <link rel="stylesheet" href="gast.css">
+</head>
+<body>
+    <nav>
+        <div class="hamburger" id="hamburger">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        
+        <!-- Menu Items -->
+        <ul class="menu" id="menu">
+            <li><a href="home.html">Home</a></li>
+            <li><a href="gast.html">Register</a></li>
+            
+        </ul>
+    
+    </nav>
+    <header>
+        <h1>Register som gäst</h1> <!-- Rubrik för inloggningssidan -->
+    </header>
+
+    <main>
+        <section id="signup-form">
+            
+            
+                 <!-- Formulär för användarregistrering -->
+        <form id="userForm"> 
+            <!-- Fält för användarens namn -->
+            <label for="name">Namn</label>
+            <input type="text" id="name" name="name" placeholder="Ange ditt namn här" required> <!-- Obligatoriskt fält för användarens namn -->
+        
+            <!-- Fält för uppladdning av profilbild -->
+            <label for="image">Bild:</label>
+            <input type="file" id="image" name="image" accept="image/*" required> <!-- Tillåter endast bildfiler (jpg, png, gif) -->
+        
+            <!-- Fält för e-postadress där arbetsgivare kan kontakta användaren -->
+            <label for="email">Vill du att arbetsgivaren kontaktar dig? Ange din e-post:</label>
+            <input type="email" id="email" name="email" placeholder="Ange din e-post här (valfritt)"> <!-- Fält för användarens e-post (valfritt) -->
+        
+            <!-- Fält för uppladdning av CV -->
+            <label for="cv">Ladda upp ditt CV:</label>
+            <input type="file" id="cv" name="cv" accept=".pdf,.doc,.docx"> <!-- Tillåter endast PDF, DOC och DOCX -->
+        
+            <!-- Registreringsknapp -->
+            <button type="submit">Register</button> <!-- Knapp för att skicka formuläret -->
+        </form>
+                
+        </section>
+    </main>
+
+    <footer>
+        <p>Power By Saeed Ajely😊</p>
+    </footer>
+
+<script src="gast.js"> </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+

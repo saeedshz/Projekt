@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8"> <!-- Ställer in teckenkodning till UTF-8 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Gör sidan responsiv för mobila enheter -->
+    <title>Kontakta jobbsökare</title> <!-- Titel som visas i webbläsarens flik -->
+    <link rel="stylesheet" href="form.css"> <!-- Länkar till det externa CSS-stilbladet -->
+</head>
+<body>
+    <!-- Navigationsmeny -->
+    <nav>
+        <!-- Hamburger-ikon för mobilmeny -->
+        <div class="hamburger" id="hamburger">
+            <div></div> <!-- Linje 1 i hamburger-menyn -->
+            <div></div> <!-- Linje 2 i hamburger-menyn -->
+            <div></div> <!-- Linje 3 i hamburger-menyn -->
+        </div>
+        
+        <!-- Menyalternativ för navigering -->
+        <ul class="menu" id="menu">
+            <li><a href="home.html">Home</a></li> <!-- Länk till startsidan -->
+            <li><a href="gast.html">Register</a></li> <!-- Länk till registreringssidan -->
+        </ul>
+    </nav>
+
+    <!-- Huvudrubrik -->
+    <header>
+        <h1>Kontakta jobbsökare</h1> <!-- Rubrik som beskriver syftet med sidan -->
+    </header>
+
+    <main>
+        <!-- Kontaktformulär -->
+        <form id="contactForm">
+            <!-- Fält för mottagarens e-post (fylls i dynamiskt med hjälp av JavaScript) -->
+            <label for="recipient">Mottagarens e-post:</label>
+            <input type="email" id="recipient" name="recipient" readonly> <!-- Fältet är readonly, så användaren kan inte ändra det -->
+
+            <label for="name">Ditt namn:</label>
+            <input type="text" id="name" name="name" required> <!-- Textfält för användarens namn -->
+
+            <label for="email">Din e-post:</label>
+            <input type="email" id="email" name="email" required> <!-- Fält för användarens e-postadress -->
+
+            <label for="message">Ditt meddelande:</label>
+            <textarea id="message" name="message" rows="5" required></textarea> <!-- Textområde för användarens meddelande -->
+
+            <button type="submit">Skicka meddelande</button> <!-- Knapp för att skicka meddelandet -->
+        </form>
+    </main>
+
+    
+    <script src="form.js"></script>
+
+    
+    <footer>
+        <p>Power By Saeed Ajely 😊 2024</p> 
+    </footer>
+</body>
+</html>

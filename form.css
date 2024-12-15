@@ -1,0 +1,153 @@
+
+/* Stilar för kontaktsformuläret */
+
+/* Nollställning av marginaler, stoppning och box-modellen */
+* {
+    margin: 0; /* Ta bort alla marginaler från alla element */
+    padding: 0; /* Ta bort all stoppning från alla element */
+    box-sizing: border-box; /* Inkludera stoppning och kantlinjer i elementets totala bredd/höjd */
+}
+
+/* Stil för body */
+body {
+    margin: 0; /* Ta bort marginalen från body */
+    font-family: Arial, sans-serif; /* Använd Arial som standardteckensnitt */
+    background-color: #f4f4f4; /* Bakgrundsfärg för sidan */
+    line-height: 1.6; /* Radavstånd för att öka läsbarheten */
+}
+
+/* Stil för hamburger-ikonen */
+.hamburger {
+    display: flex; /* Flex-layout för att stapla linjerna */
+    flex-direction: column; /* Placera linjerna vertikalt */
+    justify-content: space-between; /* Jämnt avstånd mellan linjerna */
+    width: 30px; /* Bredd på hamburger-ikonen */
+    height: 20px; /* Höjd på hamburger-ikonen */
+    cursor: pointer; /* Ändra markören till pekaren */
+    position: absolute; /* Placera ikonen i relation till den närmaste föräldern med position: relative */
+    top: 1.2rem; /* Placera den 1.2rem från toppen */
+    left: 1rem; /* Placera den 1rem från vänster */
+}
+
+/* Stil för varje linje i hamburger-ikonen */
+.hamburger div {
+    height: 4px; /* Höjd på varje linje */
+    width: 100%; /* Full bredd på linjen */
+    background-color: white; /* Färg på linjerna */
+    border-radius: 2px; /* Rundade hörn på linjerna */
+}
+
+/* Stil för menyn */
+.menu {
+    display: none; /* Dölj menyn som standard */
+    flex-direction: column; /* Placera menyalternativen vertikalt */
+    position: absolute; /* Placera menyn relativt hamburger-ikonen */
+    top: 4rem; /* Placera den 4rem under hamburger-ikonen */
+    left: 10px; /* Placera den 10px från vänster */
+    background-color: rgba(255, 255, 255, 0.552); /* Ljus transparent bakgrundsfärg */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Lägger till en skugga under menyn */
+    z-index: 1001; /* Placera menyn ovanpå andra element */
+    gap: 3px; /* Mellanrum mellan menyalternativen */
+}
+
+.menu.active {
+    display: flex; /* Visa menyn när den är aktiv */
+}
+
+.menu li {
+    list-style: none; /* Ta bort punkter från listan */
+}
+
+.menu li a {
+    text-decoration: none; /* Ta bort understrykning från länkar */
+    color: #333; /* Färg på texten */
+    padding: 10px 20px; /* Stoppning i varje länk */
+    display: block; /* Länken tar upp hela utrymmet */
+}
+
+.menu li a:hover {
+    background-color: #f4f4f4; /* Ändra bakgrundsfärgen vid hovring */
+}
+
+/* Stil för navigationsfältet */
+nav {
+    position: sticky; /* Håller navigationsfältet synligt vid bläddring */
+    top: 0; /* Placera den högst upp på sidan */
+    left: 0; /* Placera den vid vänsterkanten */
+    width: 100%; /* Full bredd på sidan */
+    background: rgba(0, 0, 0, 0.6); /* Mörk transparent bakgrundsfärg */
+    padding: 1rem; /* Stoppning inuti navigationsfältet */
+    display: flex; /* Flex-layout för att placera innehållet */
+    justify-content: center; /* Centrera innehållet horisontellt */
+    align-items: center; /* Centrera innehållet vertikalt */
+    z-index: 1000; /* Placera navigationsfältet ovanför andra element */
+}
+
+nav ul {
+    list-style: none; /* Ta bort punkter från listan */
+    display: flex; /* Visa listobjekten i rad */
+    justify-content: center; /* Centrera listobjekten horisontellt */
+    gap: 5rem; /* Lägg till mellanrum mellan listobjekten */
+}
+
+nav ul li a {
+    color: #fff; /* Vit textfärg */
+    text-decoration: none; /* Ta bort understrykning från länkar */
+    font-size: 1.2rem; /* Teckenstorlek för länkar */
+}
+
+header {
+    background: rgba(0, 0, 0, 0.6); /* Mörk transparent bakgrundsfärg */
+    color: white; /* Vit textfärg */
+    padding: 1rem; /* Stoppning inuti headern */
+    text-align: center; /* Centrera texten */
+}
+
+/* Stil för formuläret */
+form {
+    max-width: 500px; /* Maximumbredd för formuläret */
+    margin: 2rem auto; /* Centrera formuläret på sidan */
+    background: white; /* Vit bakgrundsfärg */
+    padding: 2rem; /* Stoppning inuti formuläret */
+    border-radius: 5px; /* Rundade hörn på formuläret */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Skugga för att få formuläret att sticka ut */
+}
+
+form label {
+    display: block; /* Gör varje etikett till ett blockelement */
+    margin-bottom: 0.5rem; /* Mellanrum under etiketten */
+    font-weight: bold; /* Fetstil för etiketten */
+}
+
+form input, form textarea, form button {
+    width: 100%; /* Full bredd */
+    padding: 0.5rem; /* Stoppning inuti fältet */
+    margin-bottom: 1rem; /* Mellanrum under varje fält */
+    border: 1px solid #ddd; /* Ljusgrå kantlinje */
+    border-radius: 5px; /* Rundade hörn på fältet */
+}
+
+form button {
+    background-color: #007BFF; /* Blå bakgrundsfärg */
+    color: white; /* Vit textfärg */
+    border: none; /* Ingen kantlinje */
+    padding: 0.75rem; /* Stoppning inuti knappen */
+    border-radius: 5px; /* Rundade hörn på knappen */
+    cursor: pointer; /* Ändra markören till en hand */
+    font-size: 1rem; /* Teckenstorlek */
+}
+
+form button:hover {
+    background-color: #0056b3; /* Ändra bakgrundsfärgen vid hovring */
+}
+
+/* Stil för sidfoten */
+footer {
+    text-align: center; /* Centrera texten i sidfoten */
+    padding: 1rem; /* Stoppning i sidfoten */
+    background-color: #333; /* Mörkgrå bakgrundsfärg */
+    color: white; /* Vit textfärg */
+    position: fixed; /* Placera sidfoten längst ner på sidan */
+    bottom: 0; /* Placera den vid botten av fönstret */
+    width: 100%; /* Full bredd */
+}

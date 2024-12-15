@@ -1,0 +1,307 @@
+/* Nollställning av marginaler och stoppning för alla element */
+* {
+    margin: 0; /* Ta bort standardmarginaler från alla element */
+    padding: 0; /* Ta bort standardstoppning från alla element */
+    box-sizing: border-box; /* Se till att padding och border inkluderas i elementets totala bredd och höjd */
+}
+
+/* Grundläggande stil för body-elementet */
+body {
+    margin: 0; /* Ta bort standardmarginaler från body */
+    font-family: Arial, sans-serif; /* Ställ in teckensnitt för hela dokumentet */
+    line-height: 1.6; /* Ställ in radavstånd för att öka läsbarheten */
+}
+
+/* Stil för textcontainer som innehåller animerad text */
+.text-container {
+    width: 100vw; /* Full bredd av visningsfönstret */
+    height: 50vh; /* Halva höjden på visningsfönstret */
+    font-weight: bold; /* Fet stil för text */
+    font-size: 36px; /* Teckenstorlek för texten */
+    position: relative; /* Gör det möjligt att placera barnpositioner med position: absolute */
+    overflow: hidden; /* Dölj innehåll som går utanför containern */
+}
+
+/* Stil för varje textruta i containern */
+.text-container > div {
+    animation: come2life linear 10s infinite; /* Lägg till en oändlig animation för varje div */
+    transform-origin: center center; /* Sätt transformeringspunkten i mitten av elementet */
+    opacity: 0; /* Gör texten osynlig initialt */
+    width: 250px; /* Bredd på textrutan */
+    height: 260px; /* Höjd på textrutan */
+    position: absolute; /* Gör det möjligt att placera texten relativt sin förälder */
+    backface-visibility: hidden; /* Dölj baksidan av texten om den roteras */
+}
+
+.text-container > div:nth-child(1) {
+    left: 30vw;
+    top: 20vh;
+    animation-delay: 0s;
+}
+
+.text-container > div:nth-child(2) {
+    left: 70vw;
+    top: 20vh;
+    animation-delay: 4s;
+}
+
+.text-container > div:nth-child(3) {
+    left: 50vw;
+    top: 30vh;
+    animation-delay: 8s;
+}
+
+.text-container > div:nth-child(4) {
+    left: 30vw;
+    top: 50vh;
+    animation-delay: 6s;
+}
+
+.text-container > div:nth-child(5) {
+    left: 70vw;
+    top: 70vh;
+    animation-delay: 2s;
+}
+
+@keyframes come2life {
+    0% {
+        transform: scale3d(0,0,1) rotate(0.02deg);
+        opacity: 0;
+        filter: blur(10px);
+    }
+    25% {
+        transform: scale3d(1,1,1) rotate(0.02deg);
+        opacity: 1;
+        filter: blur(0px);
+    }
+    40% {
+        opacity: 1;
+        filter: blur(0px);
+    }
+
+    80% {
+      opacity: 0;
+    }
+  
+    100% {
+        transform: scale3d(4,4,1) rotate(0.02deg);
+        filter: blur(10px);
+    }
+}
+/* Stil för hamburgerikonen */
+.hamburger {
+    display: flex; /* Flex-layouter för att ordna de tre linjerna vertikalt */
+    flex-direction: column; /* Gör att linjerna staplas vertikalt */
+    justify-content: space-between; /* Sprid linjerna med lika mellanrum */
+    width: 30px; /* Bredden på hamburgerikonen */
+    height: 20px; /* Höjden på hamburgerikonen */
+    cursor: pointer; /* Byt markören till pekaren för att indikera att det är klickbart */
+    position: absolute; /* Placera ikonen relativt sin närmaste förälder med position: relative */
+    top: 1.2rem; /* Placera ikonen 1.2rem från toppen */
+    left: 1rem; /* Placera ikonen 1rem från vänster */
+}
+
+/* Stil för varje linje i hamburgerikonen */
+.hamburger div {
+    height: 4px; /* Höjd för varje linje */
+    width: 100%; /* Full bredd för varje linje */
+    background-color: white; /* Vit färg för linjerna */
+    border-radius: 2px; /* Gör hörnen något rundade */
+}
+
+/* Stil för menyn som dyker upp från hamburgerikonen */
+.menu {
+    display: none; /* Dölj menyn som standard */
+    flex-direction: column; /* Placera menyalternativen vertikalt */
+    position: absolute; /* Placera menyn relativt hamburgerikonen */
+    top: 4rem; /* Placera menyn 4rem under hamburgerikonen */
+    left: 10px; /* Placera menyn 10px från vänster */
+    background-color: rgba(255, 255, 255, 0.552); /* Halvtransparent bakgrundsfärg */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Skugga under menyn */
+    z-index: 1001; /* Placera menyn över andra element */
+    gap: 3px; /* Liten marginal mellan menyalternativen */
+}
+
+/* Stil för en aktiv meny */
+.menu.active {
+    display: flex; /* Visa menyn när den är aktiv */
+    border-radius: 5px; /* Gör hörnen på menyn rundade */
+}
+
+/* Stil för menyalternativen */
+.menu li {
+    list-style: none; /* Ta bort standardpunkter från listan */
+}
+
+.menu li a {
+    text-decoration: none; /* Ta bort understrykning på länkar */
+    color: #333; /* Ändra färg på texten */
+    padding: 10px 20px; /* Stoppning inuti varje länk */
+    display: block; /* Gör hela länkytan klickbar */
+}
+
+.menu li a:hover {
+    background-color: #f4f4f4; /* Ändra bakgrundsfärgen vid hovring */
+}
+
+/* Stil för sidhuvudet */
+header {
+    background: url('teaser_kudenkommunikation.jpg') no-repeat center center/cover; /* Bakgrundsbild för header */
+    color: #070707; /* Färg på texten i header */
+    height: 50vh; /* Höjden på headern är halva skärmens höjd */
+    text-align: center; /* Centrera texten horisontellt */
+    display: flex; /* Flex-layouter för att centrera innehåll */
+    flex-direction: column; /* Placera innehåll vertikalt */
+    justify-content: center; /* Centrera innehållet vertikalt */
+    position: relative; /* Gör att barnpositioner kan placeras relativt header */
+}
+
+/* Stil för navigationsfältet */
+nav {
+    position: sticky; /* Håll navigationsfältet fastklistrat när du bläddrar */
+    top: 0; /* Placera det högst upp på sidan */
+    left: 0; /* Börja från vänsterkanten */
+    width: 100%; /* Full bredd av skärmen */
+    background: rgba(0, 0, 0, 0.6); /* Transparent svart bakgrund */
+    padding: 1rem; /* Stoppning inuti navigeringsfältet */
+    display: flex; /* Flex-layout för att ordna barnen */
+    justify-content: center; /* Centrera innehållet horisontellt */
+    align-items: center; /* Centrera innehållet vertikalt */
+    z-index: 1000; /* Placera navigeringen ovanför andra element */
+}
+
+nav ul {
+    list-style: none; /* Ta bort punkter från listan */
+    display: flex; /* Visa listobjekten i rad */
+    justify-content: center; /* Centrera listobjekten */
+    gap: 5rem; /* Lägg till mellanrum mellan listobjekten */
+}
+
+nav ul li a {
+    color: #fff; /* Vit färg för texten */
+    text-decoration: none; /* Ta bort understrykning från länkar */
+    font-size: 1.2rem; /* Ställ in teckenstorlek */
+}
+/* Stil för header-innehåll */
+.header-content {
+    margin-top: 1rem; /* Lägger till ett mellanrum ovanför innehållet i headern */
+}
+
+/* Stil för huvudsektionen */
+main {
+    padding: 2rem; /* Lägger till stoppning runt innehållet i huvudsektionen */
+}
+
+/* Stil för bilder i kurssektionen */
+#courses img {
+    width: 100%; /* Bilden tar upp 100% av sin förälders bredd */
+    border-radius: 10px; /* Rundade hörn på bilden */
+    margin-top: 1rem; /* Lägger till mellanrum ovanför bilden */
+}
+
+/* Stil för raden med användarrecensioner */
+.omdöm-row {
+    display: flex; /* Flex-layouter för att ordna barnen i rad */
+    flex-wrap: wrap; /* Tillåt att barnen bryts till nästa rad vid behov */
+    justify-content: space-between; /* Sprider innehållet med lika mycket utrymme mellan dem */
+    padding: 20px; /* Lägger till stoppning runt hela raden */
+}
+
+/* Stil för varje användarkort i raden */
+.omdöm-col {
+    flex: 1 1 30%; /* Gör att kortet tar upp 30% av raden men kan justeras vid behov */
+    margin: 10px; /* Lägger till mellanrum runt kortet */
+    background-color: #fff; /* Vit bakgrund för kortet */
+    border-radius: 10px; /* Rundade hörn på kortet */
+    box-shadow: 0 10px 20px 3px #86bdd0; /* Skugga för att få kortet att sticka ut */
+    overflow: hidden; /* Döljer innehåll som går utanför kortet */
+    transition: 0.3s; /* Lägger till en övergångseffekt vid hovring */
+}
+
+/* Stil för hovringseffekten på användarkorten */
+.omdöm-col:hover {
+    transform: translateY(-10px); /* Flyttar kortet 10px uppåt vid hovring */
+}
+
+/* Stil för användarsektionen i kortet */
+.user {
+    display: flex; /* Gör att bilden och texten ligger på samma rad */
+    align-items: center; /* Vertikalt centrerar innehållet */
+    padding: 20px; /* Lägger till stoppning inuti användarsektionen */
+}
+
+/* Stil för användarens bild */
+.user img {
+    width: 60px; /* Bredd på användarens bild */
+    height: 60px; /* Höjd på användarens bild */
+    border-radius: 50%; /* Gör bilden rund */
+    margin-right: 15px; /* Lägger till utrymme mellan bilden och texten */
+}
+
+/* Stil för användarens namn */
+.user-info h4 {
+    font-size: 18px; /* Ställ in teckenstorleken för användarnamnet */
+    margin-bottom: 5px; /* Lägg till mellanrum under användarnamnet */
+}
+
+/* Stil för användarens ytterligare information (t.ex. e-post) */
+.user-info p {
+    font-size: 12px; /* Ställ in teckenstorleken för informationen */
+    color: #555; /* Färgen på texten */
+    margin-top: 5px; /* Lägg till mellanrum ovanför informationen */
+    line-height: 1.4; /* Öka radavståndet för bättre läsbarhet */
+}
+
+/* Stil för informationsdelen */
+.inf {
+    font-size: 12px; /* Ställ in teckenstorleken för informationen */
+    color: #555; /* Textfärg för informationen */
+    margin-top: px; /* Ogiltig stil – saknas ett värde för margin-top */
+    line-height: 1.4; /* Öka radavståndet för bättre läsbarhet */
+}
+
+/* Stil för knapparna i kortet */
+.actions {
+    display: flex; /* Flex-layouter för att ordna knapparna horisontellt */
+    gap: 10px; /* Lägg till mellanrum mellan knapparna */
+    margin-top: 10px; /* Lägg till mellanrum ovanför knapparna */
+}
+
+/* Stil för knappar i åtgärdsdelen */
+.actions .btn {
+    display: inline-block; /* Gör knappen till en block-liknande länk */
+    background-color: #007BFF; /* Blå bakgrund för knappen */
+    color: white; /* Vit text på knappen */
+    padding: 10px 20px; /* Stoppning inuti knappen (10px uppe/nere, 20px höger/vänster) */
+    text-decoration: none; /* Ta bort understrykning från länken */
+    border-radius: 5px; /* Rundade hörn för knappen */
+    margin-left: 3%; /* Lägg till ett litet mellanrum till vänster om knappen */
+    margin-bottom: 10px; /* Lägg till mellanrum under knappen */
+}
+
+/* Stil för hovringseffekten på knapparna */
+.actions .btn:hover {
+    background-color: #0056b3; /* Ändra bakgrundsfärgen vid hovring */
+}
+
+/* Stil för sidfoten */
+footer {
+    text-align: center; /* Centrera texten horisontellt */
+    padding: 1rem; /* Lägg till stoppning inuti sidfoten */
+    background-color: #333; /* Mörkgrå bakgrundsfärg för sidfoten */
+    color: white; /* Vit textfärg för sidfoten */
+}
+
+/* Responsiv design för skärmar mindre än 768px */
+@media (max-width: 768px) {
+    .omdöm-col {
+        flex: 1 1 45%; /* Gör att varje kort tar upp 45% av raden istället för 30% */
+    }
+}
+
+/* Responsiv design för skärmar mindre än 576px */
+@media (max-width: 576px) {
+    .omdöm-col {
+        flex: 1 1 100%; /* Gör att varje kort tar upp 100% av raden istället för 30% */
+    }
+}
